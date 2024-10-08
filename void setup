@@ -1,3 +1,7 @@
+int[][] board = new int[9][9];
+int selectedRow = -1;
+int selectedCol = -1;
+
 void setup() {
   size(450, 450);
   noLoop();
