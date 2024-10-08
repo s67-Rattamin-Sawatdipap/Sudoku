@@ -7,3 +7,7 @@ void setup() {
   noLoop();
   generateRandomBoard();  // สุ่มตัวเลขในบอร์ด
 }
+void draw() {
+  background(255);
+  drawBoard();
+}
