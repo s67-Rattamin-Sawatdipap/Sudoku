@@ -105,3 +105,20 @@ boolean isSafe(int row, int col, int num) {
   }
   return true;
 }
+void removeNumbers() {
+  int count = 40;
+  while (count > 0) {
+    int row = int(random(9));
+    int col = int(random(9));
+    if (board[row][col] != 0) {
+      board[row][col] = 0;
+      count--;
+    }
+  }
+  
+  for (int row = 0; row < 9; row++) {
+    for (int col = 0; col < 9; col++) {
+      fixed[row][col] = board[row][col] != 0;
+    }
+  }
+}
