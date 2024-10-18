@@ -48,4 +48,15 @@ void drawNumbers() {
     }
   }
 }
+void mousePressed() {
+  int row = mouseY / cellSize;
+  int col = mouseX / cellSize;
+
+  if (row >= 0 && row < 9 && col >= 0 && col < 9) {
+    selectedRow = row;
+    selectedCol = col;
+    cellSelected = true;
+    redraw();
+  }
+}
 
