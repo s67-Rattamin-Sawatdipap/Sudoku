@@ -23,5 +23,17 @@ void draw() {
     text("WIN", width / 2, height / 2);
   }
 }
+void drawGrid() {
+  stroke(0);
+  for (int i = 0; i <= 9; i++) {
+    strokeWeight((i % 3 == 0) ? 4 : 1);
+    line(i * cellSize, 0, i * cellSize, 9 * cellSize);
+    line(0, i * cellSize, 9 * cellSize, i * cellSize);
+  }
 
+  if (selectedRow >= 0 && selectedCol >= 0) {
+    fill(200, 200, 255);
+    rect(selectedCol * cellSize, selectedRow * cellSize, cellSize, cellSize);
+  }
 }
+
