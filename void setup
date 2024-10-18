@@ -73,3 +73,27 @@ void generateSudoku() {
   fillBoard();
   removeNumbers();
 }
+boolean fillBoard() {
+  for (int row = 0; row < 9; row++) {
+    for (int col = 0; col < 9; col++) {
+      if (board[row][col] == 0) {
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        for (int n = 1; n <= 9; n++) {
+          numbers.add(n);
+        }
+        shuffle(numbers);
+        for (int num : numbers) {
+          if (isSafe(row, col, num)) {
+            board[row][col] = num;
+            if (fillBoard()) {
+              return true;
+            }
+            board[row][col] = 0;
+          }
+        }
+        return false;
+      }
+    }
+  }
+  return true;
+}
