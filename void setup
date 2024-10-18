@@ -59,4 +59,13 @@ void mousePressed() {
     redraw();
   }
 }
-
+void keyPressed() {
+  if (cellSelected && !fixed[selectedRow][selectedCol]) {
+    if (key >= '1' && key <= '9') {
+      board[selectedRow][selectedCol] = key - '0';
+    } else if (key == BACKSPACE || key == DELETE) {
+      board[selectedRow][selectedCol] = 0;
+    }
+    redraw();
+  }
+}
