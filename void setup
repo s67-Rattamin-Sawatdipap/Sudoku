@@ -69,3 +69,7 @@ void keyPressed() {
     redraw();
   }
 }
+void generateSudoku() {
+  fillBoard();
+  removeNumbers();
+}
