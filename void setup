@@ -36,4 +36,16 @@ void drawGrid() {
     rect(selectedCol * cellSize, selectedRow * cellSize, cellSize, cellSize);
   }
 }
+void drawNumbers() {
+  textAlign(CENTER, CENTER);
+  textSize(32);
+  for (int row = 0; row < 9; row++) {
+    for (int col = 0; col < 9; col++) {
+      if (board[row][col] != 0) {
+        fill(fixed[row][col] ? 0 : color(0, 0, 255));
+        text(board[row][col], col * cellSize + cellSize / 2, row * cellSize + cellSize / 2);
+      }
+    }
+  }
+}
 
