@@ -1,6 +1,10 @@
 int[][] board = new int[9][9];
+boolean[][] fixed = new boolean[9][9];
+int cellSize = 50;
 int selectedRow = -1;
 int selectedCol = -1;
+boolean cellSelected = false;
+boolean gameWon = false;
 
 void setup() {
   size(450, 450);
